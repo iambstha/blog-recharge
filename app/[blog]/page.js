@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import getArticles from '../func/getArticles';
 
 const Page = async ({ params }) => {
