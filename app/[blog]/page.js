@@ -1,5 +1,13 @@
 import React from 'react';
-import getArticles from '../func/getArticles';
+// import getArticles from '../func/getArticles';
+
+import { prisma } from '@/db'
+
+function getArticles(){
+    return prisma.post.findMany()
+}
+
+
 
 const Page = async ({ params }) => {
     const post = await getArticles()

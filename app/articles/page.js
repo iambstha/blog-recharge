@@ -1,7 +1,13 @@
 import React from 'react'
-import getArticles from '../func/getArticles'
+// import getArticles from '../func/getArticles'
 import Board from '../components/Board'
 import Link from 'next/link'
+import { prisma } from '@/db'
+
+function getArticles(){
+    return prisma.post.findMany()
+}
+
 
 const page = async () => {
     const post = await getArticles()
