@@ -11,6 +11,8 @@ export default function RootLayout({ children }) {
       <body>
         <Nav />
         {children}
+        <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.js"></script>
       </body>
     </html>
   )
