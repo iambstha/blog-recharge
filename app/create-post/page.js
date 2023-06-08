@@ -12,10 +12,20 @@ async function createPost(data) {
     if (typeof title !== 'string' || title.length === 0) {
         throw new Error("invalid title")
     }
-    await prisma.post.create({
-        data: { title, tag, desc, post }
-    })
-    redirect('/')
+    try{
+        await prisma.post.create({
+            data: { title, tag, desc, post }
+        })
+        redirect('/')
+    }
+    catch(error){
+        if (error.digest) {
+            console.log('Error Digest:', error.digest);
+          } else {
+            console.log('Error:', error);
+          }
+    }
+
 }
 
 const page = () => {
